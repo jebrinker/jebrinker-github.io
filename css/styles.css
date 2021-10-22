@@ -50,8 +50,8 @@ image {
 
 .hero-image-box::after {
   content: "";
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vh;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -59,9 +59,11 @@ image {
 }
 
 .hero-image {
+  display: grid;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .hero-text-box {
