@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jamie Brinker Art Portfolio</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/glightbox.min.css" />
   </head>
   <body>
     <header class="hero-box">
@@ -21,63 +22,73 @@
         <p class="hero-text">Welcome Friends!</p>
       </section>
     </header>
+
     <!-- Begin Portfolio Gallery -->
-    <section class="portfolio-gallery">
+    <section class="portfolio-container">
       <h1>Portfolio</h1>
-      <div class="gallery-item">
-        <a
-          class="glightbox"
-          href="img/Brinker Jamie Drawing Workshop Final Piece.jpg"
-        >
-          <img
-            class="gallery-img"
-            src="img/Brinker Jamie Drawing Workshop Final Piece.jpg"
-            alt="Drawing Midterm"
-        /></a>
-      </div>
-      <div class="gallery-item">
-        <a
-          class="glightbox"
-          href="img/Brinker Jamie Painting Workshop Final Piece.jpg"
-        >
-          <img
-            class="gallery-img"
-            src="img/Brinker Jamie Painting Workshop Final Piece.jpg"
-            alt="Painting Midterm"
-        /></a>
-      </div>
-      <div class="gallery-item">
-        <a class="glightbox" href="img/DSC01142.JPG">
-          <img
-            class="gallery-img"
-            src="img/DSC01142.JPG"
-            alt="Observational Drawing Fabric Study"
-        /></a>
-      </div>
-      <div class="gallery-item">
-        <a class="glightbox" href="img/DSC01144.JPG">
-          <img
-            class="gallery-img"
-            src="img/DSC01144.JPG"
-            alt="Observational Drawing Animal Skull on White Paper"
-        /></a>
-      </div>
-      <div class="gallery-item">
-        <a class="glightbox" href="img/DSC01145.JPG">
-          <img
-            class="gallery-img"
-            src="img/DSC01145.JPG"
-            alt="Observational Drawing Gestural Drawing"
-        /></a>
-      </div>
-      <div class="gallery-item">
-        <a class="glightbox" href="img/DSC01149.JPG">
-          <img
-            class="gallery-img"
-            src="img/DSC01149.JPG"
-            alt="Observational Drawing Animal Skull on Black Paper"
-        /></a>
-      </div>
+      <section class="portfolio-gallery">
+        <div class="gallery-item">
+          <a
+            class="glightbox"
+            href="img/Brinker Jamie Drawing Workshop Final Piece.jpg"
+            data-glightbox="title: Drawing Studio Workshop; description: A photo of a father and son is ripped. There is a birdhouse with birds flying away"
+          >
+            >
+            <img
+              class="gallery-img"
+              src="img/Brinker Jamie Drawing Workshop Final Piece.jpg"
+              alt="Drawing Midterm"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a
+            class="glightbox"
+            href="img/Brinker Jamie Painting Workshop Final Piece.jpg"
+            data-glightbox="title: Painting Studio Workshop; description: Birds flying around a fridge."
+          >
+            <img
+              class="gallery-img"
+              src="img/Brinker Jamie Painting Workshop Final Piece.jpg"
+              alt="Painting Midterm"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/DSC01142.JPG">
+            <img
+              class="gallery-img"
+              src="img/DSC01142.JPG"
+              alt="Observational Drawing Fabric Study"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/DSC01144.JPG">
+            <img
+              class="gallery-img"
+              src="img/DSC01144.JPG"
+              alt="Observational Drawing Animal Skull on White Paper"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/DSC01145.JPG">
+            <img
+              class="gallery-img"
+              src="img/DSC01145.JPG"
+              alt="Observational Drawing Gestural Drawing"
+          /></a>
+        </div>
+        <div class="gallery-item">
+          <a class="glightbox" href="img/DSC01149.JPG">
+            <img
+              class="gallery-img"
+              src="img/DSC01149.JPG"
+              alt="Observational Drawing Animal Skull on Black Paper"
+          /></a>
+        </div>
+      </section>
+      <script src="js/glightbox.min.js"></script>
+      <script type="text/javascript">
+        const lightbox = GLightbox({ loop: true });
+      </script>
     </section>
   </body>
 </html>

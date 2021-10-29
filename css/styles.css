@@ -51,7 +51,7 @@ image {
 .hero-image-box::after {
   content: "";
   height: 100vh;
-  width: 100vh;
+  width: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -88,6 +88,28 @@ image {
   color: white;
 }
 
+.portfolio-container {
+  margin: 1rem auto 0 auto;
+}
+
+.porfolio-container h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: burlywood;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat (auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  grid-auto-rows: 300px;
+}
+
+.gallery-img {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Media Queries Below */
 
 @media (mid-width: 600px) {
@@ -100,6 +122,11 @@ image {
     font-size: 2.5rem;
     line-height: 2.5rem;
   }
+  .portfolio-container h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    padding-left: 1rem;
+  }
 }
 @media (min-width: 920px) {
   .hero-heading {
@@ -110,5 +137,12 @@ image {
   .hero-text {
     font-size: 4rem;
     line-height: 4rem;
+  }
+  .porfolio-container {
+    max-width: 1400px;
+  }
+  .portfolio-container h1 {
+    font-size: 6rem;
+    line-height: 6rem;
   }
 }
