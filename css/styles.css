@@ -5,6 +5,18 @@ html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: initial;
+  }
+}
+
+.section-scroll {
+  scroll-margin-top: 9rem;
+  padding: 0 0 4rem 0;
 }
 
 body {
@@ -12,7 +24,7 @@ body {
   padding: 0;
   min-height: 100%;
   max-width: 100%;
-  padding-bottom: 10rem;
+  padding-bottom: 4rem;
 }
 
 *,
@@ -20,15 +32,15 @@ body {
 *::after {
   box-sizing: inherit;
 }
+
 img {
   width: 100%;
   height: auto;
   display: block;
 }
-
 /* End basic Styles */
 
-/* Begin Navigation Styles */
+/* Begin Nav Styles */
 .nav-bar {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +48,7 @@ img {
   align-items: center;
   line-height: 1rem;
   overflow: hidden;
-  background-color: azure;
+  background-color: #fff;
   z-index: 1000;
 }
 
@@ -79,7 +91,7 @@ img {
   text-decoration: none;
   letter-spacing: 0.2rem;
   padding: 0.8rem;
-  color: black;
+  color: #000;
 }
 
 .logo a {
@@ -94,7 +106,33 @@ img {
 }
 
 .nav-menu a:hover {
-  border-bottom: 1px solid #100;
+  border-bottom: 1px solid #000;
+}
+
+.top-nav {
+  background: none;
+  grid-column: 1/ -1;
+  grid-row: 1 / -1;
+  align-content: top;
+  position: fixed;
+  top: 0;
+  height: 8rem;
+}
+
+@supports (position: sticky) {
+  .top-nav {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.top-nav .logo a,
+.top-nav .nav-menu a {
+  color: white;
+}
+
+.top-nav .nav-menu a:hover {
+  border-bottom: 1px solid #fff;
 }
 
 /* Begin Hero Styles */
@@ -108,6 +146,7 @@ img {
   align-items: start;
   height: 100%;
   width: 100%;
+  margin-top: -8rem;
 }
 
 .hero-image-box {
@@ -125,7 +164,7 @@ img {
   position: absolute;
   top: 0;
   bottom: 0;
-  background-color: rgba(116, 8, 143, 0.459);
+  background-color: rgba(145, 73, 40, 0.4);
 }
 
 .hero-image,
@@ -139,7 +178,7 @@ img {
 
 .hero-video {
   background-color: black;
-  background-image: url("../img/keyboard\ still.png");
+  background-image: url("../img/ocean.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -155,8 +194,8 @@ img {
 }
 
 .hero-heading {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -174,13 +213,13 @@ img {
 .portfolio-container h1 {
   font-size: 2rem;
   line-height: 2rem;
-  color: burlywood;
+  color: green;
 }
 
 .portfolio-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 0.5rem;
   grid-auto-rows: 300px;
 }
 
@@ -208,8 +247,8 @@ img {
 
 .about-text {
   margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .about-text h1 {
@@ -224,23 +263,22 @@ img {
 
 .about-social a {
   color: black;
-  padding: 0 1rem 1rem 1 rem;
+  padding: 0 1rem 1rem 1rem;
   font-size: 2rem;
 }
+
 .about-social a:hover {
-  color: mediumpurple;
+  color: fuchsia;
 }
 
 .about-image img {
   height: 100%;
   object-fit: cover;
 }
-
 /* Media Queries Below */
 
 @media (min-width: 600px) {
   .hero-heading {
-    color: rgb(255, 255, 255);
     font-size: 4rem;
     line-height: 4rem;
   }
@@ -266,20 +304,29 @@ img {
     line-height: 1.6rem;
   }
   .about-social a {
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+  .nav-bar {
+    line-height: 1.5rem;
+  }
+  .nav-menu {
+    padding: 0 1rem;
+  }
+  .nav-item {
+    flex: 1 1;
   }
 }
+
 @media (min-width: 920px) {
   .hero-heading {
-    color: rgb(255, 255, 255);
-    font-size: 7rem;
-    line-height: 7rem;
+    font-size: 9rem;
+    line-height: 9rem;
   }
   .hero-text {
     font-size: 4rem;
     line-height: 4rem;
   }
-  .porfolio-container {
+  .portfolio-container {
     max-width: 1400px;
   }
   .portfolio-container h1 {
@@ -289,7 +336,6 @@ img {
   .about-container {
     max-width: 1400px;
   }
-
   .about-text h1 {
     font-size: 6rem;
     line-height: 6rem;
@@ -297,5 +343,20 @@ img {
   .about-text p {
     font-size: 1.8rem;
     line-height: 2.1rem;
+  }
+  .about-social a {
+    font-size: 4rem;
+  }
+  .nav-bar {
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    line-height: 1rem;
+  }
+  .nav-menu {
+    width: auto;
+    justify-self: end;
+  }
+  .top-nav {
+    width: 100%;
   }
 }
